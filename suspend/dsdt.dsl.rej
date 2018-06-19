@@ -1,0 +1,12 @@
+--- dsdt.dsl	2018-03-03 14:47:12.279105691 +0100
++++ dsdt.dsl	2018-03-03 14:26:30.606427931 +0100
+@@ -351,9 +287,7 @@
+     Name (SS1, 0x00)
+     Name (SS2, 0x00)
+     Name (SS3, One)
+-    One
+     Name (SS4, One)
+-    One
+     OperationRegion (GNVS, SystemMemory, 0xAB54E000, 0x0767)
+     Field (GNVS, AnyAcc, Lock, Preserve)
+     {

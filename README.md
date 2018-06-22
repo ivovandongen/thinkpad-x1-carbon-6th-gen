@@ -1,7 +1,12 @@
 # Thinkpad x1 carbon 6th gen withh Ubuntu (18.04)
 
 ## Fix trackpad
-- Disable whilst typing
+- Disable whilst typing. Add the following to `~/.bash_profile` or startup applications:
+
+```
+xinput set-prop "12" "Synaptics Palm Detection" 1
+xinput set-prop "12" "Synaptics Palm Dimensions" 3, 3
+```
 
 ## Fix multitouch on apple magic trackpad 2
 

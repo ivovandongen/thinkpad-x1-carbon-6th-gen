@@ -8,6 +8,8 @@ xinput set-prop "12" "Synaptics Palm Detection" 1
 xinput set-prop "12" "Synaptics Palm Dimensions" 3, 3
 ```
 
+Get the id (12 above) with `xinput`
+
 ## Fix multitouch on apple magic trackpad 2
 
 ## Fixing S3 suspend

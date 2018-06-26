@@ -75,3 +75,9 @@ See original patch [here](https://delta-xi.net/#056)
 12. Reboot
 13. Check that deep sleep is enabled and the default:
     - `cat /sys/power/mem_sleep` (Should give `s2idle [deep]`)
+
+### Add suspend option to menu
+- `sudo apt-get install gnome-shell-extension-suspend-button`
+- Open `Tweaks` app and enable `Extensions > Suspend Button`
+
+See https://github.com/laserb/gnome-shell-extension-suspend-button

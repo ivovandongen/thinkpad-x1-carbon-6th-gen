@@ -21,20 +21,23 @@ See original patch [here](https://delta-xi.net/#056)
 
 ### If you're feeling lazy:
 
-1. Copy [overrride_acpi](suspend/override_acpi) to `/boot`
-2. Change this line in `/etc/grub.d/10_linux` (See changed file [10_linux](suspend/10_linux))
+1. Configure the BIOS:
+    - Config > Thunderbolt (TM) 3 > Thunderbolt BIOS Assist Mode > Enabled
+    - Security > Secure Boot must > Disabled
+2. Copy [overrride_acpi](suspend/override_acpi) to `/boot`
+3. Change this line in `/etc/grub.d/10_linux` (See changed file [10_linux](suspend/10_linux))
     - `initrd	${rel_dirname}/${initrd}`
     
     to read
     - `initrd	${rel_dirname}/acpi_override ${rel_dirname}/${initrd}`
-3. Change this line in `/etc/default/grub` (See changed file [grub](grub))
+4. Change this line in `/etc/default/grub` (See changed file [grub](grub))
     - `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash psmouse.synaptics_intertouch=1"`
     
     to read
     - `GRUB_CMDLINE_LINUX_DEFAULT="quiet splash psmouse.synaptics_intertouch=1 mem_sleep_default=deep"`
-4. Update grub
+5. Update grub
     - `sudo update-grub2`
-5. Reboot
+6. Reboot
 
 
 

@@ -8,8 +8,10 @@ SYNAPTICS_ID=`xinput | grep "Synaptics TM3288-011" | sed -n 's/.*id=\([0-9]*\).*
 xinput set-prop $SYNAPTICS_ID "Synaptics Palm Detection" 1
 xinput set-prop $SYNAPTICS_ID "Synaptics Palm Dimensions" 3, 3
 ```
-
-Get the id (12 above) with `xinput`
+Check for properties currently set:
+```
+xinput watch-props `xinput | grep "Synaptics TM3288-011" | sed -n 's/.*id=\([0-9]*\).*/\1/p'`
+```
 
 ## Fix multitouch on apple magic trackpad 2
 

@@ -4,8 +4,9 @@
 - Disable whilst typing. Add the following to `~/.bash_profile` or startup applications:
 
 ```
-xinput set-prop "12" "Synaptics Palm Detection" 1
-xinput set-prop "12" "Synaptics Palm Dimensions" 3, 3
+SYNAPTICS_ID=`xinput | grep "Synaptics TM3288-011" | sed -n 's/.*id=\([0-9]*\).*/\1/p'`
+xinput set-prop $SYNAPTICS_ID "Synaptics Palm Detection" 1
+xinput set-prop $SYNAPTICS_ID "Synaptics Palm Dimensions" 3, 3
 ```
 
 Get the id (12 above) with `xinput`

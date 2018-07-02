@@ -15,7 +15,9 @@ xinput watch-props `xinput | grep "Synaptics TM3288-011" | sed -n 's/.*id=\([0-9
 
 ## Fix multitouch on apple magic trackpad 2
 
-## Fix bluetooth headset issues (after suspend)
+## Fix bluetooth headset issues 
+
+### Connect after suspend
 
 - Install newer BlueZ
 
@@ -25,6 +27,8 @@ sudo apt-get install bluez
 sudo /etc/init.d/bluetooth restart
 ````
 
+### Use high-fidelity audio
+Try:
 - Install pulseaudio control
 
 ```
@@ -32,6 +36,19 @@ sudo apt-get install pavucontrol
 ```
 
 - Set pulse audio to use high-fidelity: Open pavucontrol. On Configuration tab select A2DP for the connected headset.
+
+If that doesn't work
+- Install blueman
+
+```
+sudo apt install blueman
+```
+
+In Bluetooth Manager: 
+- Right-Click on Device
+- Select `Setup`
+- Connect to `Audio Sink`
+- Next next finish
 
 ## Fixing S3 suspend
 
